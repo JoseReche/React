@@ -1,22 +1,18 @@
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import Footer from './components/Footer'
 import Header from './components/Header'
-import List from './components/List'
-import Video from './components/Video'
-import Forms from './components/Forms'
+import About from './pages/About'
+import ApiRickAndMorty from './pages/ApiRickAndMorty'
 
 function App() {
   return (
     <>
       <Header />
-      <main>
-        <List titulo='Lista 01'/>
-        <List />
-        <Video />
-        <Forms/>
-      </main>
+      <Routes>
+        <Route path='/' element={<ApiRickAndMorty />}/>
+        <Route path='/about' element={<About />}/>
+      </Routes>
       <Footer />
     </>
   )
